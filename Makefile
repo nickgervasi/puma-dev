@@ -19,8 +19,14 @@ release:
 	mv puma-dev_linux_amd64 puma-dev
 	tar czvf pkg/puma-dev-$$RELEASE-linux-amd64.tar.gz puma-dev
 
+	mv puma-dev_linux_arm64 puma-dev
+	tar czvf pkg/puma-dev-$$RELEASE-linux-arm64.tar.gz puma-dev
+
 	mv puma-dev_darwin_amd64 puma-dev
 	zip pkg/puma-dev-$$RELEASE-darwin-amd64.zip puma-dev
+
+	mv puma-dev_darwin_arm64 puma-dev
+	zip czvf pkg/puma-dev-$$RELEASE-darwin-arm64.zip puma-dev
 
 test:
 	go test -v -race -coverprofile=coverage.out -covermode=atomic ./...
